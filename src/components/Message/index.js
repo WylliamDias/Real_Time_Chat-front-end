@@ -1,21 +1,23 @@
-import React, { memo } from 'react'
+import React, { memo } from 'react';
 
-function Messages({ data: messages }) {
-  console.log(`Messages Component:`, messages)
+import './styles.css';
+
+function Message({ data: messages }) {
+  console.log(`Message Component:`, messages);
   return (
     <>
       {messages.map((element, index) => {
         if (element.text !== '') {
           return (
             <div key={index} id={element.id}>
-              <span>{element.text}</span>
+              <span className="chatSpan">{element.text}</span>
             </div>
-          )
+          );
         }
-        return <></>
+        return <></>;
       })}
     </>
-  )
+  );
 }
 
-export default memo(Messages)
+export default memo(Message);
